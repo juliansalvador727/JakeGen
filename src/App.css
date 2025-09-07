@@ -2,7 +2,6 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
 }
 
 .logo {
@@ -39,4 +38,37 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+}
+
+.container {
+  display: flex;
+}
+
+.left-side {
+  display: flex;
+  border: 1px solid blue;
+  flex-direction: column;
+  width: 800px;
+}
+
+.right-side {
+  display: flex;
+  border: 1px solid green;
+  flex-direction: column;
+  width: 400px;
+}
+
+.copyright {
+  text-align: center;
 }
