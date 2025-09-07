@@ -60,11 +60,17 @@ function App() {
       <Title />
       <div className="container">
         <div className="left-side">
-          <General />
+          <General
+            data={resumeData.general}
+            setData={(general) => setResumeData({ ...resumeData, general })}
+          />
           <Education />
           <Experience />
           <Projects />
-          <Skills />
+          <Skills
+            data={resumeData.skills}
+            setData={(skills) => setResumeData({ ...resumeData, skills })}
+          />
         </div>
         <div className="right-side">
           <ResumePreview />

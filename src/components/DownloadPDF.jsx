@@ -1,7 +1,7 @@
 function DownloadPDF() {
   return (
     <>
-      <button>Un button</button>
+      <button>Download PDF</button>
     </>
   );
 }
