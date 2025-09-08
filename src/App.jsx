@@ -64,16 +64,27 @@ function App() {
             data={resumeData.general}
             setData={(general) => setResumeData({ ...resumeData, general })}
           />
-          <Education />
-          <Experience />
-          <Projects />
+          <Education
+            data={resumeData.education}
+            setData={(education) => setResumeData({ ...resumeData, education })}
+          />
+          <Experience
+            data={resumeData.experience}
+            setData={(experience) =>
+              setResumeData({ ...resumeData, experience })
+            }
+          />
+          <Projects
+            data={resumeData.projects}
+            setData={(projects) => setResumeData({ ...resumeData, projects })}
+          />
           <Skills
             data={resumeData.skills}
             setData={(skills) => setResumeData({ ...resumeData, skills })}
           />
         </div>
         <div className="right-side">
-          <ResumePreview />
+          <ResumePreview data={resumeData} />
           <DownloadPDF />
         </div>
       </div>
