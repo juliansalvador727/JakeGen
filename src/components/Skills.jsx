@@ -9,11 +9,11 @@ function Skills({ data, setData }) {
     <>
       <h2>Technical Skills</h2>
       <div className="form">
-        <label htmlFor="language">Languages: </label>
+        <label htmlFor="languages">Languages: </label>
         <input
           type="text"
-          id="language"
-          name="language"
+          id="languages"
+          name="languages"
           value={data.name}
           onChange={handleChange}
         />
@@ -32,6 +32,14 @@ function Skills({ data, setData }) {
           type="text"
           id="tools"
           name="tools"
+          value={data.name}
+          onChange={handleChange}
+        />
+        <label htmlFor="libraries">Libraries</label>
+        <input
+          type="text"
+          id="libraries"
+          name="libraries"
           value={data.name}
           onChange={handleChange}
         />

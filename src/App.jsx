@@ -7,7 +7,6 @@ import General from "./components/General";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import ResumePreview from "./components/ResumePreview";
-import DownloadPDF from "./components/DownloadPDF";
 
 import "./App.css";
 
@@ -49,10 +48,10 @@ function App() {
     ],
 
     skills: {
-      languages: [],
-      frameworks: [],
-      tools: [],
-      libraries: [],
+      languages: "",
+      frameworks: "",
+      tools: "",
+      libraries: "",
     },
   });
   return (
@@ -85,7 +84,6 @@ function App() {
         </div>
         <div className="right-side">
           <ResumePreview data={resumeData} />
-          <DownloadPDF />
         </div>
       </div>
 

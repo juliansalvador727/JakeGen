@@ -59,14 +59,14 @@ body {
   display: flex;
   border: 1px solid blue;
   flex-direction: column;
-  width: 800px;
+  width: 500px;
 }
 
 .right-side {
   display: flex;
   border: 1px solid green;
   flex-direction: column;
-  width: 400px;
+  width: 600px;
 }
 
 .copyright {
