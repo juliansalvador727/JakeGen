@@ -20,3 +20,4 @@ Extra features:
 -reorder resume sections
 -light/dark mode
 -1:1.294 OR 500:647 is ratio of US letter.
+-use react resume exporter
