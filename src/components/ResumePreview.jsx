@@ -1,43 +1,44 @@
 import ResumeDocument from "./ResumeDocument.jsx";
 import jsPDF from "jspdf";
-import html2canvas from "html2canvas";
 import { useRef } from "react";
+import "../assets/cmunrm-normal.js";
+import "../assets/cmunbx-bold.js";
 
 function ResumePreview({ data }) {
+  const resumeRef = useRef();
+
   const handleDownload = async () => {
-    const element = document.querySelector("#resume-document");
+    const element = resumeRef.current;
     if (!element) return;
 
-    const canvas = await html2canvas(element, { scale: 2, useCORS: true });
-    const imgData = canvas.toDataURL("image/png");
-
     const pdf = new jsPDF("p", "pt", "letter");
-    const pdfWidth = pdf.internal.pageSize.getWidth();
-    const pdfHeight = pdf.internal.pageSize.getHeight();
+    pdf.addFont("cmunrm-normal.ttf", "CMU", "normal");
 
-    const imgProps = canvas.width / canvas.height;
-    const pdfProps = pdfWidth / pdfHeight;
-
-    let renderWidth, renderHeight, x, y;
-    if (imgProps > pdfProps) {
-      renderWidth = pdfWidth;
-      renderHeight = (canvas.height * pdfWidth) / canvas.width;
-      x = 0;
-      y = (pdfHeight - renderHeight) / 2;
-    } else {
-      renderHeight = pdfHeight;
-      renderWidth = (canvas.width * pdfHeight) / canvas.height;
-      x = (pdfWidth - renderWidth) / 2;
-      y = 0;
-    }
-    pdf.addImage(imgData, "PNG", x, y, renderWidth, renderHeight);
-    pdf.save("resume.pdf");
+    pdf.setFont("CMU", "normal");
+    // Render HTML directly into PDF
+    await pdf.html(element, {
+      // margin: [20, 20, 20, 20],
+      autoPaging: "text", // handle multipage
+      x: 0,
+      y: 0,
+      html2canvas: {
+        scale: 1.5, // still uses canvas internally but via jsPDF (no direct import of html2canvas)
+      },
+      callback: function (doc) {
+        doc.save("resume.pdf");
+      },
+    });
   };
 
   return (
     <div className="resume-preview">
       <h2>Resume Preview</h2>
-      <ResumeDocument data={data} />
+      <div id="resume-border">
+        <div id="resume-document" ref={resumeRef}>
+          <ResumeDocument data={data} />
+        </div>
+      </div>
+
       <button onClick={handleDownload}>Download PDF</button>
     </div>
   );

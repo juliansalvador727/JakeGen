@@ -1,9 +1,9 @@
 @font-face {
-  font-family: "CMU Serif Roman";
+  font-family: "CMU";
   font-style: normal;
   font-weight: normal;
   src: local("CMU Serif Roman"),
-    url("../public/fonts/cmunrm.woff") format("woff");
+    url("../public/fonts/cmunrm.ttf") format("truetype");
 }
 
 @font-face {
@@ -17,9 +17,8 @@
 @font-face {
   font-family: "CMU Serif Bold";
   font-style: normal;
-  font-weight: normal;
-  src: local("CMU Serif Bold"),
-    url("../public/fonts/cmunbx.woff") format("woff");
+  font-weight: bold;
+  src: local("CMU Serif Bold"), url("../public/fonts/cmunbx.ttf") format("ttf");
 }
 
 @font-face {
@@ -31,7 +30,7 @@
 }
 
 :root {
-  font-family: "CMU Serif Roman";
+  font-family: "CMU";
   line-height: 1.5;
   font-weight: 400;
 

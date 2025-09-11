@@ -3,15 +3,17 @@ import "../Resume.css";
 function ResumeDocument({ data }) {
   if (!data) return null;
   return (
-    <div id="resume-document" className="resume-container">
+    <>
       {/* General */}
       <div className="resume-general">
-        <h1>{data.general.name || "Your Name"}</h1>
+        <h1 className="resume-name">{data.general.name || "Jake Ryan"}</h1>
         {/* phone number, email, linkedin, github */}
-        <p>{data.general.phone || "7781231"}</p>
-        <p>{data.general.email || "bruh@gmail.com"}</p>
-        <p>{data.general.linkedin || "linkedin.com"}</p>
-        <p>{data.general.github || "github.com"}</p>
+        <p className="resume-general-details">
+          {data.general.phone || "123-456-7890"} |{" "}
+          {data.general.email || "jake@su.edu"} |{" "}
+          {data.general.linkedin || "linkedin.com/in/jake"} |{" "}
+          {data.general.github || "github.com/jake"}
+        </p>
       </div>
       {/* Education */}
       {/* Experience */}
@@ -23,7 +25,7 @@ function ResumeDocument({ data }) {
         <p>{data.skills.tools || "VS Code"}</p>
         <p>{data.skills.libraries || "Pandas"}</p>
       </div>
-    </div>
+    </>
   );
 }
 
