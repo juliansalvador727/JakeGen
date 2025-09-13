@@ -20,10 +20,12 @@ function ResumeDocument({ data }) {
       {/* Projects */}
       {/* Skills */}
       <div className="resume-skills">
-        <p>{data.skills.languages || "JavaScript"}</p>
-        <p>{data.skills.frameworks || "React"}</p>
-        <p>{data.skills.tools || "VS Code"}</p>
-        <p>{data.skills.libraries || "Pandas"}</p>
+        <p>
+          Languages: {data.skills.languages || "JavaScript "}
+          Frameworks: {data.skills.frameworks || "React"}
+          Tools: {data.skills.tools || "VS Code"}
+          Skills: {data.skills.libraries || "Pandas"}
+        </p>
       </div>
     </>
   );

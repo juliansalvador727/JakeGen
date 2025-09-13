@@ -1,7 +1,7 @@
 function Title() {
   return (
     <div className="title">
-      <h1>Julian's Resume Generator</h1>
+      <h1>JakeGen</h1>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 function Experience() {
   return (
     <>
-      <h1>Hi I'm Experience!</h1>
+      <h2>Experience</h2>
     </>
   );
 }

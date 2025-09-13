@@ -7,6 +7,7 @@ import General from "./components/General";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import ResumePreview from "./components/ResumePreview";
+import TestTypst from "./components/TestTypst";
 
 import "./App.css";
 
@@ -86,6 +87,8 @@ function App() {
           <ResumePreview data={resumeData} />
         </div>
       </div>
+
+      <TestTypst />
 
       <h3 className="copyright">Made by Julian in React :) </h3>
     </>
